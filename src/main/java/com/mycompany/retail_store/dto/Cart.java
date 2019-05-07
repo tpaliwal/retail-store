@@ -5,6 +5,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.mycompany.retail_store.UserType;
 import com.mycompany.retail_store.service.DiscountPolicy;
 import com.mycompany.retail_store.service.Item;
@@ -20,6 +23,8 @@ public class Cart {
     private DiscountPolicy discountPolicy;
     private User user;
 
+    private static Logger LOGGER = LoggerFactory.getLogger(Cart.class);
+    
     public Cart(User user) {
         quantities = new LinkedHashMap<Item, Integer>();
         this.user = user;
@@ -51,7 +56,12 @@ public class Cart {
 
     // To add multiple quantities of item
     public void add(Item itemToBuy, int howMany) {
+    	
+    	LOGGER.debug("Item is : "+itemToBuy+" with quantities : "+ howMany);
+    	
     	Item item;
+    	
+    	LOGGER.debug("User type : "+user.getType());
     	
     	// Apply 30% discount in case of employee of store
     	if (user.getType() == UserType.EMPLOYEE) {
