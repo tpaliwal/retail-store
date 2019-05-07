@@ -1,0 +1,26 @@
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+.settings/
+*/.settings/*
+*/.classpath
+.project
+.classpath
+bin/*
+<<<<<<< HEAD
+bin
+*/META-INF/MANIFEST.MF
+
+=======
+bin
+>>>>>>> bf5076136733e68496d74cd3240ef823521e3b84
+

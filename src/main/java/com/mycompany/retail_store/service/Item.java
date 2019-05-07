@@ -13,4 +13,6 @@ public interface Item {
     String getName();
     
     ItemType getType();
+    
+    int getUnits();
 }
